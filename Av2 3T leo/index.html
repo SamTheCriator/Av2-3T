@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>Campanha de Prevenção</title>
+</head>
+<header>
+    <section class="titulo">
+        <div class="cabecalho">
+            <h1>Campanha de Prevenção</h1>
+        </div>
+    </section>
+</header>
+<body style="background-image:url(img/background.png);">
+    <script>
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        var menuIcon = document.querySelector('.menu-icon');
+    
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+            menuIcon.classList.remove('open');
+        } else {
+            menu.style.display = 'block';
+            menuIcon.classList.add('open');
+        }
+    }
+</script>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <div class="menu menu-hidden">
+        <ul>
+            <li>
+                <a href="#idiomas" onclick="toggleSubOptions(event)">Idiomas</a>
+                <ul class="sub-options idiomas">
+                    <li><a href="#ingles">Inglês</a></li>
+                    <li><a href="#portugues">Português</a></li>
+                    <li><a href="#espanhol">Espanhol</a></li>
+                    <li><a href="#voltar" onclick="voltarMenu()">Voltar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#acessibilidade" onclick="toggleSubOptions(event)">Acessibilidade</a>
+                <ul class="sub-options acessibilidade">
+                    <li><a href="#assistencia-audio">Assistência de Áudio</a></li>
+                    <li><a href="#fonte">Fonte</a></li>
+                    <li><a href="#modo-daltonicos">Modo para Daltônicos</a></li>
+                    <li><a href="#libras">Libras</a></li>
+                    <li><a href="#voltar" onclick="voltarMenu()">Voltar</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="icon">
+        <div class="icon-Rosa">
+            <img src="img/rosa.png" alt="simbolo">
+        </div>
+        <div class="icon-Azul">
+            <img src="img/azul.png" alt="simbolo">
+        </div>
+    </div>
+
+    <div class="conteudo">
+        <h1>Outubro Rosa o que é?</h1>
+        <p>Outubro Rosa é uma campanha de conscientização que tem como objetivo principal alertar as mulheres e a sociedade sobre a importância da prevenção e do diagnóstico precoce do câncer de mama e mais recentemente sobre o câncer de colo do útero.</p>
+        <p>ESTIMATIVAS DE NOVOS CASOS DE CÂNCER DE MAMA (2020 - INCA). É O CÂNCER MAIS COMUM ENTRE AS MULHERES.</p>
+        <img src="img/graficom.png" alt="grafo">
+    </div>
+
+    <div class="conteudo-azul">
+        <h1> Novembro Azul, do que se trata?</h1>
+        <p> Identificação precoce de doenças aumenta as chances de um tratamento eficaz. Por isso, alguns exames devem fazer parte da rotina dos homens. “É preciso prestar atenção no corpo e ficar atento aos sinais que ele envia. O cuidado deve ser diário.</p>
+        <img src="img/graficoh.jpg" alt="grafo">
+        <div class="preto">
+        <h1>Qual a importância de se realizar o tratamento precose, e ficar atento aos sinais do corpo?</h1>
+    </div>
+        <p>A identificação precoce de doenças aumenta as chances de um tratamento eficaz. Por isso, alguns exames devem fazer parte da rotina dos homens. “É preciso prestar atenção no corpo e ficar atento aos sinais que ele envia. O cuidado deve ser diário.</p>
+    </div>
+       
+</body>
+<footer class="rodape">
+    <h4>
+     <p>Endereço: Rua Bahia, 1258 Centro 86.690-000 - Colorado - Pr</p>
+     <p>Telefone:(44) 3323-1055</p>
+     <p>Email: clomonteirolobato@seed.pr.gov.br</p>
+    </h4>
+</footer>
+
+<script src="script.js"></script>
+</html>
+<body id="pageBody" style="background-image:url(img/background.png);">
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            var menuIcon = document.querySelector('.menu-icon');
+            var closeButton = document.querySelector('.close-button');
+            var pageBody = document.getElementById('pageBody');
+        
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                menuIcon.classList.remove('open');
+                closeButton.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+                menuIcon.classList.add('open');
+                closeButton.style.display = 'block';
+            }
+        }
+        
+        function toggleSubOptions(event) {
+            event.preventDefault(); // Evita que o link funcione como um link normal
+            var subOptions = document.querySelector('.sub-options');
+            if (subOptions.style.display === 'block') {
+                subOptions.style.display = 'none';
+            } else {
+                subOptions.style.display = 'block';
+            }
+        }
+        function voltarMenu() {
+    var subOptions = document.querySelectorAll('.sub-options');
+    subOptions.forEach(function (subOption) {
+        subOption.style.display = 'none';
+    });
+}
+
+function toggleSubOptions(event) {
+    event.preventDefault();
+    var clickedLink = event.target;
+    var submenuClass = clickedLink.getAttribute("href").substring(1);
+
+    // Caso o link seja para "voltar," utilize a função voltarMenu
+    if (submenuClass === "voltar") {
+        voltarMenu();
+    } else {
+        // Oculta todos os submenus
+        var subOptions = document.querySelectorAll('.sub-options');
+        subOptions.forEach(function (subOption) {
+            subOption.style.display = 'none';
+        });
+
+        // Exibe o submenu correspondente ao link clicado
+        var currentSubmenu = document.querySelector('.' + submenuClass);
+        currentSubmenu.style.display = 'block';
+    }
+}
+
+        </script>
+        
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+     
+
+
